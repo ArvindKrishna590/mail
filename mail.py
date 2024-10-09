@@ -49,7 +49,7 @@ def send_custom_emails(sender_email, sender_password, subject_template, body_tem
 
 def connect_to_google_sheet(sheet_name):
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name(r"C:\Users\hoopa\OneDrive\Desktop\BreakoutAI\google_sheet_mail.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name(r"\google_sheet_mail.json", scope)
     client = gspread.authorize(creds)
     sheet = client.open(sheet_name).sheet1 
     return sheet
